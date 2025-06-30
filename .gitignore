@@ -1,3 +1,6 @@
+# Setting
+/.vscode
+
 # Testing Code
 tsconfig.json
 build/
