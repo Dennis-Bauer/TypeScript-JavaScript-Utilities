@@ -55,6 +55,22 @@ export function createColorText(
 }
 
 /**
+ * This function prints the string with the style codes to the console, without applying the codes to the text
+ * @param color Sets the color of the text.
+ * @param style Sets the style of the text.
+ * @param resetTextAtEnd If set to true, resets any styling for text placed after the string.
+ * @param text The text to be output.
+ */
+export function logStringWithCodes(
+  color: colors,
+  style: textStyle,
+  resetTextAtEnd: boolean,
+  text: string
+) {
+  console.log(createColorText(color, style, resetTextAtEnd, text).replace(/\x1b/g, '\\x1b'));
+}
+
+/**
  * This function generates the text code that sets the color and style.
  * @param color This input says what color the text code should contain.
  * @param style This input says what style the text code should contain.

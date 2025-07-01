@@ -39,6 +39,9 @@ function createColorText(color, style, resetTextAtEnd, text) {
     return `${getTextCode(color, style)}${text}${resetTextAtEnd ? RESET : ""}`;
 }
 
+function logStringWithCodes(color, style, resetTextAtEnd, text) {
+    console.log(createColorText(color, style, resetTextAtEnd, text).replace(/\x1b/g, '\\x1b'));
+}
 /**
  * This function generates the text code that sets the color and style.
  * @param color This input says what color the text code should contain.
@@ -194,3 +197,4 @@ const getTextCode = function (color, style) {
 
 exports.consoleLog = consoleLog;
 exports.createColorText = createColorText;
+exports.logStringWithCodes = logStringWithCodes;
